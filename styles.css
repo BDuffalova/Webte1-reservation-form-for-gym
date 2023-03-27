@@ -1,0 +1,240 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+.content {
+    background-image: url("pozadie.png");
+    /* background-repeat: no-repeat; */
+    color: white;
+    text-align: center;
+}
+
+input {
+    border-color: #fefefe;
+    border-radius: 5px;
+}
+
+textarea {
+    border-color: #fefefe;
+    border-radius: 10px;
+
+}
+select {
+    border-radius: 5px;
+}
+
+option {
+    border-color: #fefefe;
+    border-radius: 10px;
+}
+
+label {
+    font-size: large;
+}
+
+h3 {
+    font-size: 2vw;
+}
+
+form {
+    padding-left: 2%;
+    display: grid;
+    grid: auto/ 50% 50%;
+    text-align: left;
+    column-gap: 10px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.6);
+    margin-bottom: 20px;
+}
+
+.udaje {
+    width: 90%;
+    display: grid;
+    grid: auto/ 50% 50%;
+    column-gap: 20px;
+    row-gap: 20px;
+}
+
+.udaje input{
+    width: 100%;
+    margin: 5px;
+}
+
+.kontakt {
+    padding-left: 5px;
+}
+
+.kontakt div input{
+    display: block;
+    width: 90%;
+    
+}
+
+.telefonne-cislo div{
+    display: flex;
+
+}
+
+.radio-buttony {
+    display: flex;
+}
+
+#volba-ano {
+    display: none;
+}
+.sluzby-ano {
+    display: flex;
+}
+
+.sluzby-ano div {
+    text-align: center;
+    display: grid;
+    grid: auto auto/ auto;
+}
+
+.detail-prenajmu {
+    display: grid;
+    grid: auto/ auto auto;
+}
+
+.validacia {
+    font-size: medium;
+    color: rgb(254, 118, 118);
+    font-weight: 300;
+}
+
+#volba-nie {
+    display: block;
+}
+
+.sluzby-nie {
+    display: flex;
+}
+
+.povinny-udaj {
+    font-size: xx-small;
+}
+
+
+#mala-telocvicna {
+    display: none;
+}
+
+#ihrisko {
+    display: none;
+}
+
+#futbal {
+    display: none;
+}
+
+#volejbal {
+    display: none;
+}
+
+#florbal {
+    display: none;
+}
+
+#kruhovy-trening {
+    display: none;
+}
+
+#tenis {
+    display: none;
+}
+
+#bedminton {
+    display: none;
+}
+
+.skusenosti {
+    display: grid;
+    
+}
+
+.skusenosti div {
+    display: grid;
+    grid: auto/ 1fr 1fr;
+    text-align: left;
+}
+
+#tajne-udaje {
+    width: 80%;
+    display: block;
+}
+
+#ine {
+    width: 80%;
+    display: none;
+}
+
+#modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
+  color: black;
+  
+}
+
+.modal-content {
+  background-image: url("pozadie.png");
+  background-size: cover;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 60%; /* Could be more or less, depending on screen size */
+  text-align: end;
+  left: 50%;
+}
+
+.modal-content button {
+    background-color: rgb(37, 159, 247);
+    color: white;
+}
+.modal-content p {
+    font-weight: 500;
+    font-style: italic;
+}
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .chyba {
+    border: solid 3px rgb(242, 116, 116);
+  }
+
+  .pocitadlo {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+@media only screen and (max-width: 768px){
+    form {
+        display: block;
+    }
+    .udaje {
+        display: block;
+    }
+}

@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+    <title>Rezervačný systém</title>
+</head>
+
+<body onload="poNacitani()">
+    <div class="content">
+        <form action="https://form2mail.hynix.sk/form2mail.php" method="post" enctype="multipart/form-data" id="dotaznik">
+            <input type="hidden" name="apikey" value="b50f6f8853d5244e7918692aeb9130e8">
+            <input type="hidden" name="from" value="duffalova.b@gmail.com">
+            <input type="hidden" name="to" value="feistu04@gmail.com">
+            <input type="hidden" name="to" value="duffalova.b@gmail.com">
+            <input type="hidden" name="sender" value="Barbora Duffalová">
+            <input type="hidden" name="subject" value="Výstup z formulára">
+            <input type="hidden" name="redirectOk" value="">
+            <input type="hidden" name="redirectFalse" value="">
+            <div class="zakaznik">
+                <h1>Osobné údaje</h1>
+                <div class="osobne-udaje">
+                    <div class="udaje">
+                        <div>
+                            <label for="meno">Meno <br><span class="povinny-udaj">*Tento údaj je povinný</span></label>
+                            <input type="text" name="meno" id="meno" placeholder="Jozef">
+                            <p class="pocitadlo">0/128</p>
+                            <strong class="" id="valMeno"></strong>
+                        </div>
+                        <div>
+                            <label for="priezvisko">Priezvisko <br> <span class="povinny-udaj">*Tento údaj je
+                                    povinný</span></label>
+                            <input type="text" name="priezvisko" id="priezvisko" placeholder="Kaiserka">
+                            <p class="pocitadlo">0/128</p>
+                            <strong class="" id="valPriezvisko"></strong>
+                        </div>
+                        <div>
+                            <label for="datum-narodenia">Dátum narodenia <br> <span class="povinny-udaj">*Tento údaj je
+                                    povinný</span></label>
+                            <input type="date" name="datum-narodenia" id="datum-narodenia">
+                            <strong class="" id="valDatum"></strong>
+                        </div>
+                        <div>
+                            <label for="vek">Vek <br> <span class="povinny-udaj">*Tento údaj je povinný</span></label>
+                            <input type="number" name="vek" id="vek" min="15" max="100" placeholder="15<= a <=100">
+                            <strong class="" id="valVek"></strong>
+                        </div>
+                        <div>
+                            <label for="pohlavie">Pohlavie <br> <span class="povinny-udaj">*Tento údaj je
+                                    povinný</span></label>
+                            <select name="" id="pohlavie">
+                                <option value="zena">Žena</option>
+                                <option value="muz">Muž</option>
+                                <option value="ine">Iné</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="kontakt">
+                        <div>
+                            <label for="mail">Email <br> <span class="povinny-udaj">*Tento údaj je
+                                    povinný</span></label>
+                            <input type="email" name="mail" id="mail" placeholder="meno@gmail.com">
+                            <p class="pocitadlo">0/128</p>
+                            <strong class="" id="valMail"></strong>
+                        </div>
+                        <div class="telefonne-cislo">
+                            <label for="cislo">Telefónne číslo</label>
+                            <div>
+                                <div>
+                                    <select name="predvolba" id="predvolba">
+                                        <option value="+421">+421</option>
+                                        <option value="+420">+420</option>
+                                        <option value="+33">+33</option>
+                                    </select>
+
+                                </div>
+                                <div>
+                                    <input type="text" name="cislo" id="cislo" placeholder="xxx xxx xxx">
+                                    <p></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="prieskum">
+                    <h3>Využili ste už naše služby?</h3>
+                    <div class="radio-buttony">
+
+                        <div>
+                            <label for="button-prieskum" >Áno</label>
+                            <input type="radio" name="button-prieskum" id="ano" value="ano">
+                        </div>
+                        <div>
+                            <label for="button-prieskum">Nie</label>
+                            <input type="radio" name="button-prieskum" id="nie" value="nie" checked>
+                        </div>
+
+                    </div>
+                    <div>
+                        <div id="volba-ano">
+                            <h3>Ako ste spokojný s našimi službami? (1 - úplne nespokojný, 5 - úplne spokojný)</h3>
+                            <div class="sluzby-ano">
+                                <div>
+                                    <label for="vobec">1</label>
+                                    <input type="radio" name="button-spokojnost" id="vobec" value="vobec">
+                                </div>
+                                <div>
+                                    <label for="trochu-nespokojny">2</label>
+                                    <input type="radio" name="button-spokojnost" id="trochu-nespokojny" value="trochu-nespokojny">
+                                </div>
+                                <div>
+                                    <label for="priemer">3</label>
+                                    <input type="radio" name="button-spokojnost" id="priemer" value="priemer">
+                                </div>
+                                <div>
+                                    <label for="trochu-spokojny">4</label>
+                                    <input type="radio" name="button-spokojnost" id="trochu-spokojny" value="trochu-spokojny">
+                                </div>
+                                <div>
+                                    <label for="uplne">5</label>
+                                    <input type="radio" name="button-spokojnost" id="uplne" value="uplne">
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <div id="volba-nie">
+                            <h3>
+                                Ako ste sa o nás dozvedeli?
+                            </h3>
+                            <div class="sluzby-nie">
+                                <div>
+                                    <label for="reklama">Reklama</label>
+                                    <input type="radio" name="button-objavenie" id="reklama" value="reklama">
+                                </div>
+                                <div>
+                                    <label for="znamost">Známosť</label>
+                                    <input type="radio" name="button-objavenie" id="znamost" value="znamost">
+                                </div>
+                                <div>
+                                    <label for="ostatne">Iné</label>
+                                    <input type="radio" name="button-objavenie" id="ostatne" value="ostatne">
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="objednavka">
+                <h1>Údaje o objednávke</h1>
+                <div>
+                    <h3>Vyberte si telocvičňu, šport a náčinie</h3>
+                    <select name="miestnost" id="miestnost">
+                        <option value="velka-telocvicna">Veľká telocvičňa</option>
+                        <option value="mala-telocvicna">Malá telocvičňa</option>
+                        <option value="ihrisko">Ihrisko</option>
+                    </select>
+
+                    <select name="sport" class="sport" id="velka-telocvicna">
+                        <option value="basketbal">Basketbal</option>
+                        <option value="futbal">Futbal</option>
+                        <option value="volejbal">Volejbal</option>
+                    </select>
+
+                    <select class="sport" id="mala-telocvicna">
+                        <option value="florbal">Florbal</option>
+                        <option value="kruhovy-trening">Kruhový tréning</option>
+                    </select>
+
+                    <select class="sport" id="ihrisko">
+                        <option value="tenis">Tenis</option>
+                        <option value="bedminton">Bedminton</option>
+                    </select>
+
+                    <select name="nacinie" class="nacinie" id="basketbal">
+                        <option value="nic">Nič</option>
+                        <option value="lopta">Lopta</option>
+                        <option value="rozlisovacky">Rozlišovačky</option>
+                        <option value="kuzele">Kužele</option>
+                    </select>
+
+                    <select class="nacinie" id="futbal">
+                        <option value="nic">Nič</option>
+                        <option value="lopta">Lopta</option>
+                        <option value="rozlisovacky">Rozlišovačky</option>
+                        <option value="kuzele">Kužele</option>
+                    </select>
+
+                    <select class="nacinie" id="volejbal">
+                        <option value="nic">Nič</option>
+                        <option value="lopta">Lopta</option>
+                        <option value="siet">Sieť</option>
+                    </select>
+
+                    <select class="nacinie" id="florbal">
+                        <option value="nic">Nič</option>
+                        <option value="hokejky">Hokejky</option>
+                        <option value="lopticka">Loptička</option>
+                    </select>
+
+                    <select class="nacinie" id="kruhovy-trening">
+                        <option value="nic">Nič</option>
+                        <option value="karimatky">Karimatky</option>
+                        <option value="cinky">Činky</option>
+                        <option value="fitlopty">Fitlopty</option>
+                    </select>
+
+                    <select class="nacinie" id="tenis">
+                        <option value="nic">Nič</option>
+                        <option value="lopticky">Loptičky</option>
+                        <option value="rakety">Rakety</option>
+                    </select>
+
+                    <select class="nacinie" id="bedminton">
+                        <option value="nic">Nič</option>
+                        <option value="kosiky">Košíky</option>
+                        <option value="rakety">Rakety</option>
+                    </select>
+                </div>
+                <h3>Zvoľte počet ľudí a čas prenájmu</h3>
+                <div class="detail-prenajmu">
+                    <div>
+                        <label for="pocet">Počet ľudí</label>
+                        <select name="pocet ludi" id="pocet">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="cas">Čas prenájmu</label>
+                        <select name="cas" id="cas">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                        </select>
+                    </div>
+                </div>
+                <h3>Športy, s ktorými máte skúsenosti</h3>
+                <div class="skusenosti">
+                    <div>
+                        <label for="skusenost-basketbal">Basketbal</label>
+                        <input type="checkbox" name="skusenost-s-basketbalom" id="skusenost-basketbal" value="ano">
+                    </div>
+                    <div>
+                        <label for="skusenost-futbal">Futbal</label>
+                        <input type="checkbox" name="skusenost-s-futbalom" id="skusenost-futbal" value="ano">
+                    </div>
+                    <div>
+                        <label for="skusenost-bemdinton">Bedminton</label>
+                        <input type="checkbox" name="skusenost-s-bedmintonom" id="skusenost-bemdinton" value="ano">
+                    </div>
+                    <div>
+                        <label for="skusenost-tenis">Tenis</label>
+                        <input type="checkbox" name="skusenopst-s-tenisom" id="skusenost-tenis" value="ano">
+                    </div>
+                    <div>
+                        <label for="skusenost-volejbal">Volejbal</label>
+                        <input type="checkbox" name="skusenopst-s-volejbalom" id="skusenost-volejbal" value="ano">
+                    </div>
+                    <div>
+                        <label for="skusenost-kruh-trening">Kruhový tréning</label>
+                        <input type="checkbox"name="skusenopst-s-kruhovym-treningom"  id="skusenost-kruh-trening" value="ano">
+                    </div>
+                    <div>
+                        <label for="skusenost-ine">Iné</label>
+                        <input type="checkbox" id="skusenost-ine" value="ine">
+                    </div>
+                    <div id="ine">
+                        <input name="iny sport" type="text" id="ine-text">
+                        <p class="pocitadlo">0/128</p>
+                    </div>
+
+                </div>
+                <div>
+                    <h3>Poznámka</h3>
+                    <textarea name="poznamka" id="poznamka" cols="30" rows="10"></textarea>
+                    <p class="pocitadlo">0/128</p>
+                </div>
+                <div class="majitel">
+                    <div>
+                        <button id="tajne-tlacidlo">Zobraz tajné údaje</button>
+                        <output name="tajne-udaje" id="tajne-udaje" cols="10" rows="2"></output>
+
+                    </div>
+                    <div>
+                        <button type="reset" id="resetuj">Resetuj</button>
+                        <button type="submit" id="odosli">Odošli</button>
+                    </div>
+                    <h3 id="upozornenie"></h3>
+                </div>
+            </div>
+        </form>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1944.8334668537548!2d0.36190059295006466!3d43.95562508093595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12aa3db6b8a0fe77%3A0x8d0b3ccfd5fa49cc!2sBasic-Fit%20Condom%20Boulevard%20Saint%20Jacques!5e0!3m2!1ssk!2ssk!4v1666514285690!5m2!1ssk!2ssk" width="82%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div id="modal">
+        </div>
+    </div>
+
+</body>
+
+</html>
